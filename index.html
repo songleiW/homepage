@@ -1,58 +1,23 @@
 <!DOCTYPE html>
-<!-- saved from url=(0040)http://artemsheludko.pw/flexible-jekyll/ -->
 <html lang="en">
 
-	
 <head>
+    <meta charset="UTF-8">
+    <title>Songlei Wang's Homepage</title>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Songlei Wang's Homepage</title>
-        <link rel="shortcut icon" href="img/songlei.jpg"/>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<meta name="keywords" content="Songlei, Harbin Institute of Technology, Shenzhen">
-	<meta name="description" content="Songlei Wang's home page">
-	<meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg" />
-	<meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg" />
-	<link rel="stylesheet" href="./css/jemdoc.css">
-	<title>Songlei Wang, Shenzhen University</title>
-</head>
+    <link rel="shortcut icon" href="img/songlei.jpg">
 
-	
-<table>
-	<tbody>
-		<tr>
-			<td width="670">
-				<div id="toptitle">					
-					<h1>Songlei Wang &nbsp 王松磊 </h1><h1>
-				</h1></div>
-				<h3> Assistant Professor</h3>
-				<p>
-					School of Artificial Intelligence <br>
-					National Engineering Laboratory for Big Data System Computing Technology<br>
-					Shenzhen University <br>
-					Email: songlei.wang@szu.edu.cn<br><br>
-					<a href="https://scholar.google.com/citations?user=xx-tGM8AAAAJ&hl=en"><img src="img/google_scholar.png" width="16px" height = "16" style="vertical-align: middle; margin-top: -4px;">    Google Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="https://orcid.org/0000-0003-4063-1694"><img src="img/ORCID.png" width="16px" height = "16" style="vertical-align: middle; margin-top: -4px;">    ORCID</a>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="https://dblp.uni-trier.de/pid/314/5373.html"><img src="img/DBLP.png" width="16px" height = "16" style="vertical-align: middle; margin-top: -4px;">    DBLP</a><br>
-				</p>
-				<p>
-					<!-- <a href="paper/CV.pdf"><img src="img/cv_p.jpg"  height="40px" style="margin-bottom:-3px"></a> -->
-<!-- 					<a href="https://songleiw.github.io/homepage/"><img src="img/github.jpg" height="40px" style="margin-bottom:-3px"></a> -->
-					<!-- <a href="img/weichat.pdf"><img src="img/weichat.jpg"  height="40px" style="margin-bottom:-3px"></a> -->
-				</p>
-			</td>
-			<td>
-				<img src="img/songlei.jpg" alt="Songlei Wang" border="0" width="300"></a><br>
-			</td>
-	</tbody>
-</table>
-	
-	
+    <meta name="keywords" content="Songlei Wang, Shenzhen University, Security and Privacy">
+    <meta name="description" content="Songlei Wang's home page">
 
-     <h2>Biography</h2>
-    <div id="news-content" >
-	  <span style="margin: -10px 0px 0px 0px">I am currently an Assistant Professor (“Hundred Talents Program”) in the School of Artificial Intelligence and the National Engineering Laboratory for Big Data System Computing Technology, Shenzhen University. I completed my Ph.D. in Computer Science and Technology at Harbin Institute of Technology, Shenzhen, under the supervision of <a href="https://www.cs.cityu.edu.hk/~jia/">Xiaohua Jia</a> and <a href="https://yifengzcs.github.io/">Yifeng Zheng</a>. Before that, I obtained my Master degree in Computer Technology from Harbin Institute of Technology, Shenzhen, under the supervision of <a href="https://www.cs.cityu.edu.hk/~jia/">Xiaohua Jia</a> and <a href="https://scholar.google.com/citations?user=9Vfs4tMAAAAJ&hl=en">Jiangang Shu</a>, and obtained my Bachelor degree in Internet of Things from China University of Petroleum (East China).<br><br> I focus on utilizing secure multi-party computation techniques (such as secret sharing, differential privacy, etc.) to address various practical problems (such as privacy-preserving graph analysis and search, privacy-preserving machine learning, etc.).
-	</div>
+    <meta name="google-site-verification"
+          content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg">
 
-<style>
+    <link rel="stylesheet" href="./css/jemdoc.css">
+
+    <style>
+        /* ==================== Services ==================== */
+
         .services-container {
             display: flex;
             justify-content: space-between;
@@ -63,213 +28,476 @@
             margin-right: 20px;
         }
 
-        ul {
+        .services-container ul {
             list-style-type: none;
             padding: 0;
         }
 
-        li {
+        .services-container li {
             margin-bottom: 10px;
         }
-    </style>
 
-     <h2>Services</h2>
+
+        /* ==================== Publications ==================== */
+
+        .publications {
+            list-style: none;
+            counter-reset: paper;
+            padding-left: 40px;
+            margin-top: 15px;
+        }
+
+        /* Paper numbering */
+        .publications > li.paper {
+            counter-increment: paper;
+            position: relative;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .publications > li.paper::before {
+            content: counter(paper) ".";
+            position: absolute;
+            left: -40px;
+            width: 30px;
+            text-align: right;
+        }
+
+        /* Year divider */
+        .publications > li.year-divider {
+            list-style: none;
+            margin: 35px 0 20px -40px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .publications > li.year-divider::before,
+        .publications > li.year-divider::after {
+            content: "";
+            flex: 1;
+            border-top: 2px solid #d0d7de;
+        }
+
+        .publications > li.year-divider span {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a5276;
+            white-space: nowrap;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<!-- ==================== Profile ==================== -->
+
+<table>
+    <tbody>
+        <tr>
+            <td width="670">
+
+                <div id="toptitle">
+                    <h1>Songlei Wang &nbsp; 王松磊</h1>
+                </div>
+
+                <h3>Assistant Professor</h3>
+
+                <p>
+                    School of Artificial Intelligence<br>
+                    National Engineering Laboratory for Big Data System Computing Technology<br>
+                    Shenzhen University<br>
+                    Email: songlei.wang@szu.edu.cn<br><br>
+
+                    <a href="https://scholar.google.com/citations?user=xx-tGM8AAAAJ&hl=en">
+                        <img src="img/google_scholar.png"
+                             width="16"
+                             height="16"
+                             style="vertical-align: middle; margin-top: -4px;">
+                        Google Scholar
+                    </a>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <a href="https://orcid.org/0000-0003-4063-1694">
+                        <img src="img/ORCID.png"
+                             width="16"
+                             height="16"
+                             style="vertical-align: middle; margin-top: -4px;">
+                        ORCID
+                    </a>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <a href="https://dblp.uni-trier.de/pid/314/5373.html">
+                        <img src="img/DBLP.png"
+                             width="16"
+                             height="16"
+                             style="vertical-align: middle; margin-top: -4px;">
+                        DBLP
+                    </a>
+
+                </p>
+
+            </td>
+
+            <td>
+                <img src="img/songlei.jpg"
+                     alt="Songlei Wang"
+                     border="0"
+                     width="300">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<!-- ==================== Biography ==================== -->
+
+<h2>Biography</h2>
+
+<div id="news-content">
+
+    <p>
+        I am currently an Assistant Professor (“Hundred Talents Program”)
+        in the School of Artificial Intelligence and the National Engineering
+        Laboratory for Big Data System Computing Technology, Shenzhen University.
+
+        I completed my Ph.D. in Computer Science and Technology at
+        Harbin Institute of Technology, Shenzhen, under the supervision of
+        <a href="https://www.cs.cityu.edu.hk/~jia/">Xiaohua Jia</a>
+        and
+        <a href="https://yifengzcs.github.io/">Yifeng Zheng</a>.
+
+        Before that, I obtained my Master degree in Computer Technology
+        from Harbin Institute of Technology, Shenzhen, under the supervision of
+        <a href="https://www.cs.cityu.edu.hk/~jia/">Xiaohua Jia</a>
+        and
+        <a href="https://scholar.google.com/citations?user=9Vfs4tMAAAAJ&hl=en">
+            Jiangang Shu
+        </a>,
+
+        and obtained my Bachelor degree in Internet of Things
+        from China University of Petroleum (East China).
+    </p>
+
+    <p>
+        I focus on utilizing secure multi-party computation techniques
+        (such as secret sharing, differential privacy, etc.)
+        to address various practical problems
+        (such as privacy-preserving graph analysis and search,
+        privacy-preserving machine learning, etc.).
+    </p>
+
+</div>
+
+
+
+<!-- ==================== Services ==================== -->
+
+<h2>Services</h2>
 
 <div class="services-container">
+
     <div class="column">
-        <h3 style="color: red">Journal reviewer</h3>
+
+        <h3 style="color: red;">Journal reviewer</h3>
+
         <ul>
-        	<li>IEEE Transactions on Information Forensics and Security</li>
+            <li>IEEE Transactions on Information Forensics and Security</li>
             <li>IEEE Transactions on Dependable and Secure Computing</li>
             <li>IEEE Transactions on Knowledge and Data Engineering</li>
             <li>IEEE Transactions on Services Computing</li>
             <li>IEEE Transactions on Neural Networks and Learning Systems</li>
-			<li>IEEE Transactions on Cloud Computing</li>
+            <li>IEEE Transactions on Cloud Computing</li>
             <li>IEEE Internet of Things Journal</li>
             <li>Computer Networks</li>
-			<li>Computers & Security</li>
-			<li>Blockchain: Research and Applications</li>
-			<li>Chinese Journal of Computers（计算机学报）</li>
-
+            <li>Computers &amp; Security</li>
+            <li>Blockchain: Research and Applications</li>
+            <li>Chinese Journal of Computers（计算机学报）</li>
         </ul>
+
     </div>
+
 
     <div class="column">
-		<h3 style="color: red">Program committee/Conference reviewer</h3>
-		<ul>
-			<li>USENIX Security 2027</li>
-			<li>WISE 2026</li>
-			<li>CSDP 2026</li>
+
+        <h3 style="color: red;">Program committee/Conference reviewer</h3>
+
+        <ul>
+            <li>USENIX Security 2027</li>
+            <li>WISE 2026</li>
+            <li>CSDP 2026</li>
             <li>DASFAA 2024/2025</li>
-			<li>MSN 2025</li>
+            <li>MSN 2025</li>
         </ul>
+
     </div>
-</div>
-
- <tr><tr><tr><tr>
-<div style="margin-top: 10px"></div>
-    <h2>Publications (# denotes equal contribution; * denotes corresponding author)</h2>
-<!--<p><a href="http://scholar.google.com/citations?user=PeMuphgAAAAJ">My Google Scholar</a></p>-->
-
-	<table id="tbPublications" width="100%">
-	<tbody>
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-<ol>
-	
-<div style="display: flex; align-items: center; gap: 15px; margin: 30px 0 20px;">
-
-    <hr style="flex: 1; border: none; border-top: 2px solid #d0d7de; margin: 0;">
-
-    <strong style="font-size: 20px; color: #1a5276;">2026</strong>
-
-    <hr style="flex: 1; border: none; border-top: 2px solid #d0d7de; margin: 0;">
 
 </div>
 
-	
-	
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, and Xiaohua Jia,
-    "Privacy-Preserving Analytics on Outsourced Streaming Graphs: The Case of Pattern Detection",
-    <span style="color: red;">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>, 2026.</li>
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, Zhongyun Hua, Xiaohua Jia, and Haibo Hu,
-    "FastPSC: A Fast and Maliciously Secure Set Computation Service for Multi-Owner Set Data",
-    <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2026.</li>
 
-<li>Guilin Deng, Silong Chen, Yuchuan Luo, Yi Liu, <strong>Songlei Wang</strong>,
-    Zhiping Cai, Lin Liu, Xiaohua Jia, and Shaojing Fu,
-    "Toward Efficient Membership Inference Attacks against Federated Large Language Models: A Projection Residual Approach",
-    <span style="color: red;">IEEE Symposium on Security and Privacy (S&P, <strong>BIG 4</strong>)</span>, 2026.</li>
+<!-- ==================== Publications ==================== -->
 
-<li>Haochang Jin, Junkai Ji, <strong>Songlei Wang</strong>, Zexuan Zhu,
-    Jianqiang Li, and Ka Chun Wong,
-    "DenSNN: Integrating Local Nonlinear Dendritic Computation into Deep Spiking Neural Networks for Neuromorphic Vision",
-    <span style="color: red;">IEEE Transactions on Artificial Intelligence (TAI)</span>, 2026.</li>
+<h2>Publications (# denotes equal contribution; * denotes corresponding author)</h2>
 
-<li>Adil Nawaz, Jianqiang Li, Victor C.M. Leung, <strong>Songlei Wang</strong>, and Jie Chen, "F2GP: Privacy-preserving Federated & Fast Gaussian Process Models with Support Set Optimization", <span style="color: red;">IEEE Transactions on Dependable and Secure Computing (TDSC)</span>, 2026.</li>
 
-<li>Yazhou Liu, <strong>Songlei Wang</strong>, Yifeng Zheng, Lei Xu, and Zhongyun Hua,
-    "Federated Graph Analytics with Privacy: The Case of Parallel Chain Detection",
-    <span style="color: red;">EAI International Conference on Security and Privacy in Communication Networks (SecureComm)</span>, 2026.</li>
+<ol class="publications">
 
-<li>Yinxing Zhang, Guang Tang, Qingwang Wang, <strong>Songlei Wang*</strong>,
-    Zhiquan Liu, Zhongyun Hua,
-    "SecDiv: Privacy-Preserving Diversity-Constrained Top-k Query Processing in the Cloud",
-    <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2026.</li>
 
-<!-- ==================== 2025 ==================== -->
+    <!-- ==================== 2026 ==================== -->
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, and Haibo Hu,
-    "PrivAGM: Secure Construction of Differentially Private Directed Attributed Graph Models on Decentralized Social Graphs",
-    <span style="color: red;">Proceedings of the VLDB Endowment</span>, 2025.</li>
+    <li class="year-divider"><span>2026</span></li>
 
-<li>Longji Li, Yifeng Zheng, <strong>Songlei Wang</strong>, Zhongyun Hua,
-    Lei Xu, and Yansong Gao,
-    "Privacy-Assured Analytics on Decentralized Graphs: The Case of Graph Learning",
-    <span style="color: red;">IEEE Trustcom</span>, 2025.</li>
 
-<li>Huajie Ouyang, Yifeng Zheng, <strong>Songlei Wang</strong>, Zhongyun Hua,
-    "OblivTime: Oblivious and Efficient Interval Skyline Query Processing over Encrypted Time-Series Data",
-    <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2025.</li>
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, and Xiaohua Jia,
+        "Privacy-Preserving Analytics on Outsourced Streaming Graphs: The Case of Pattern Detection",
+        <span style="color: red;">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>, 2026.
+    </li>
 
-<!-- ==================== 2024 ==================== -->
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, and Xiaohua Jia,
-    "GraphGuard: Private Time-Constrained Pattern Detection Over Streaming Graphs in the Cloud",
-    <span style="color: red;">USENIX Security Symposium (<strong>BIG 4</strong>)</span>, 2024.</li>
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, Zhongyun Hua, Xiaohua Jia, and Haibo Hu,
+        "FastPSC: A Fast and Maliciously Secure Set Computation Service for Multi-Owner Set Data",
+        <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2026.
+    </li>
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, and Cong Wang,
-    "eGrass: An Encrypted Attributed Subgraph Matching System with Malicious Security",
-    <span style="color: red;">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2024.</li>
 
-<li>Yifeng Zheng, Weibo Wang, <strong>Songlei Wang</strong>, Zhongyun Hua,
-    Yansong Gao,
-    "ObliuSky: Oblivious User-Defined Skyline Query Processing in the Cloud",
-    <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2024.</li>
+    <li class="paper">
+        Guilin Deng, Silong Chen, Yuchuan Luo, Yi Liu,
+        <strong>Songlei Wang</strong>, Zhiping Cai, Lin Liu, Xiaohua Jia, and Shaojing Fu,
+        "Toward Efficient Membership Inference Attacks against Federated Large Language Models: A Projection Residual Approach",
+        <span style="color: red;">IEEE Symposium on Security and Privacy (S&amp;P, <strong>BIG 4</strong>)</span>, 2026.
+    </li>
 
-<li>Yifeng Zheng, Menglun Zhou, <strong>Songlei Wang</strong>, Zhongyun Hua,
-    Jinghua Jiang, Yansong Gao,
-    "Privacy-Preserving Competitive Detour Tasking in Spatial Crowdsourcing",
-    <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2024.</li>
 
-<li>Yifeng Zheng, Tianchen Xiong, Huajie Ouyang, <strong>Songlei Wang</strong>,
-    Zhongyun Hua, Yansong Gao,
-    "SARA: A Sparsity-Aware Efficient Oblivious Aggregation Service for Federated Matrix Factorization",
-    <span style="color: red;">International Web Information Systems Engineering Conference (WISE)</span>, 2024.</li>
+    <li class="paper">
+        Haochang Jin, Junkai Ji, <strong>Songlei Wang</strong>, Zexuan Zhu,
+        Jianqiang Li, and Ka Chun Wong,
+        "DenSNN: Integrating Local Nonlinear Dendritic Computation into Deep Spiking Neural Networks for Neuromorphic Vision",
+        <span style="color: red;">IEEE Transactions on Artificial Intelligence (TAI)</span>, 2026.
+    </li>
 
-<li>Weibo Wang, Yifeng Zheng, <strong>Songlei Wang</strong>, Zhongyun Hua,
-    Lei Xu, and Yansong Gao,
-    "BopSkyline: Boosting Privacy-Preserving Skyline Query Service in the Cloud",
-    <span style="color: red;">Computers & Security</span>, 2024.</li>
 
-<!-- ==================== 2023 ==================== -->
+    <li class="paper">
+        Adil Nawaz, Jianqiang Li, Victor C.M. Leung,
+        <strong>Songlei Wang</strong>, and Jie Chen,
+        "F2GP: Privacy-preserving Federated &amp; Fast Gaussian Process Models with Support Set Optimization",
+        <span style="color: red;">IEEE Transactions on Dependable and Secure Computing (TDSC)</span>, 2026.
+    </li>
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, Qian Wang, and Cong Wang,
-    "MAGO: Maliciously Secure Subgraph Counting on Decentralized Social Graphs",
-    <span style="color: red;">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2023.</li>
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, Hejiao Huang, and Cong Wang,
-    "PrigSim: Towards Privacy-Preserving Graph Similarity Search as a Cloud Service",
-    <span style="color: red;">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>, 2023.</li>
+    <li class="paper">
+        Yazhou Liu, <strong>Songlei Wang</strong>, Yifeng Zheng, Lei Xu, and Zhongyun Hua,
+        "Federated Graph Analytics with Privacy: The Case of Parallel Chain Detection",
+        <span style="color: red;">EAI International Conference on Security and Privacy in Communication Networks (SecureComm)</span>, 2026.
+    </li>
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, and Xiaohua Jia,
-    "SecGNN: Privacy-Preserving Graph Neural Network Training and Inference as a Cloud Service",
-    <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2023.</li>
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, and Xun Yi,
-    "Privacy-Preserving Analytics on Decentralized Social Graphs: The Case of Eigendecomposition",
-    <span style="color: red;">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>, 2023.</li>
+    <li class="paper">
+        Yinxing Zhang, Guang Tang, Qingwang Wang,
+        <strong>Songlei Wang*</strong>, Zhiquan Liu, Zhongyun Hua,
+        "SecDiv: Privacy-Preserving Diversity-Constrained Top-k Query Processing in the Cloud",
+        <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2026.
+    </li>
 
-<li>Yifeng Zheng, Menglun Zhou, <strong>Songlei Wang</strong>, Hejiao Huang,
-    Xiaohua Jia, Xun Yi, and Cong Wang,
-    "SecDR: Enabling Secure, Efficient, and Accurate Data Recovery for Mobile Crowdsensing",
-    <span style="color: red;">IEEE Transactions on Dependable and Secure Computing (TDSC)</span>, 2023.</li>
 
-<li>Yifeng Zheng, Shuangqing Xu, <strong>Songlei Wang</strong>, Yansong Gao,
-    and Zhongyun Hua,
-    "Privet: A Privacy-Preserving Vertical Federated Learning Service for Gradient Boosted Decision Tables",
-    <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2023.</li>
 
-<li>Menglun Zhou, Yifeng Zheng, <strong>Songlei Wang</strong>, Zhongyun Hua,
-    Hejiao Huang, Yansong Gao, and Xiaohua Jia,
-    "PPTA: A Location Privacy-Preserving and Flexible Task Assignment Service for Spatial Crowdsourcing",
-    <span style="color: red;">Computer Networks</span>, 2023.</li>
+    <!-- ==================== 2025 ==================== -->
 
-<!-- ==================== 2022 ==================== -->
+    <li class="year-divider"><span>2025</span></li>
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, and Xun Yi,
-    "PeGraph: A System for Privacy-Preserving and Efficient Search over Encrypted Social Graphs",
-    <span style="color: red;">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2022.</li>
 
-<li><strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, Hejiao Huang, and Cong Wang,
-    "OblivGM: Oblivious Attributed Subgraph Matching as a Cloud Service",
-    <span style="color: red;">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2022.</li>
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, and Haibo Hu,
+        "PrivAGM: Secure Construction of Differentially Private Directed Attributed Graph Models on Decentralized Social Graphs",
+        <span style="color: red;">Proceedings of the VLDB Endowment</span>, 2025.
+    </li>
 
-<li>Jiangang Shu<sup class="superscript">#</sup>,
-    <strong>Songlei Wang</strong><sup class="superscript">#</sup>,
-    Xiaohua Jia, Weizhe Zhang, Ruitao Xie, and Hejiao Huang,
-    "Efficient Lane-Level Map Building via Vehicle-based Crowdsourcing",
-    <span style="color: red;">IEEE Transactions on Intelligent Transportation Systems (TITS)</span>, 2022.</li>
 
-<li>Yifeng Zheng, Weibo Wang, <strong>Songlei Wang</strong>, Xiaohua Jia,
-    Hejiao Huang, and Cong Wang,
-    "SecSkyline: Fast Privacy-Preserving Skyline Queries over Encrypted Cloud Databases",
-    <span style="color: red;">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>, 2022.</li>
+    <li class="paper">
+        Longji Li, Yifeng Zheng, <strong>Songlei Wang</strong>, Zhongyun Hua,
+        Lei Xu, and Yansong Gao,
+        "Privacy-Assured Analytics on Decentralized Graphs: The Case of Graph Learning",
+        <span style="color: red;">IEEE Trustcom</span>, 2025.
+    </li>
 
-	
+
+    <li class="paper">
+        Huajie Ouyang, Yifeng Zheng, <strong>Songlei Wang</strong>, Zhongyun Hua,
+        "OblivTime: Oblivious and Efficient Interval Skyline Query Processing over Encrypted Time-Series Data",
+        <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2025.
+    </li>
+
+
+
+    <!-- ==================== 2024 ==================== -->
+
+    <li class="year-divider"><span>2024</span></li>
+
+
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, and Xiaohua Jia,
+        "GraphGuard: Private Time-Constrained Pattern Detection Over Streaming Graphs in the Cloud",
+        <span style="color: red;">USENIX Security Symposium (<strong>BIG 4</strong>)</span>, 2024.
+    </li>
+
+
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, and Cong Wang,
+        "eGrass: An Encrypted Attributed Subgraph Matching System with Malicious Security",
+        <span style="color: red;">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2024.
+    </li>
+
+
+    <li class="paper">
+        Yifeng Zheng, Weibo Wang, <strong>Songlei Wang</strong>, Zhongyun Hua,
+        Yansong Gao,
+        "ObliuSky: Oblivious User-Defined Skyline Query Processing in the Cloud",
+        <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2024.
+    </li>
+
+
+    <li class="paper">
+        Yifeng Zheng, Menglun Zhou, <strong>Songlei Wang</strong>, Zhongyun Hua,
+        Jinghua Jiang, Yansong Gao,
+        "Privacy-Preserving Competitive Detour Tasking in Spatial Crowdsourcing",
+        <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2024.
+    </li>
+
+
+    <li class="paper">
+        Yifeng Zheng, Tianchen Xiong, Huajie Ouyang,
+        <strong>Songlei Wang</strong>, Zhongyun Hua, Yansong Gao,
+        "SARA: A Sparsity-Aware Efficient Oblivious Aggregation Service for Federated Matrix Factorization",
+        <span style="color: red;">International Web Information Systems Engineering Conference (WISE)</span>, 2024.
+    </li>
+
+
+    <li class="paper">
+        Weibo Wang, Yifeng Zheng, <strong>Songlei Wang</strong>, Zhongyun Hua,
+        Lei Xu, and Yansong Gao,
+        "BopSkyline: Boosting Privacy-Preserving Skyline Query Service in the Cloud",
+        <span style="color: red;">Computers &amp; Security</span>, 2024.
+    </li>
+
+
+
+    <!-- ==================== 2023 ==================== -->
+
+    <li class="year-divider"><span>2023</span></li>
+
+
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, Qian Wang, and Cong Wang,
+        "MAGO: Maliciously Secure Subgraph Counting on Decentralized Social Graphs",
+        <span style="color: red;">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2023.
+    </li>
+
+
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, Hejiao Huang, and Cong Wang,
+        "PrigSim: Towards Privacy-Preserving Graph Similarity Search as a Cloud Service",
+        <span style="color: red;">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>, 2023.
+    </li>
+
+
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, and Xiaohua Jia,
+        "SecGNN: Privacy-Preserving Graph Neural Network Training and Inference as a Cloud Service",
+        <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2023.
+    </li>
+
+
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, and Xun Yi,
+        "Privacy-Preserving Analytics on Decentralized Social Graphs: The Case of Eigendecomposition",
+        <span style="color: red;">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>, 2023.
+    </li>
+
+
+    <li class="paper">
+        Yifeng Zheng, Menglun Zhou, <strong>Songlei Wang</strong>, Hejiao Huang,
+        Xiaohua Jia, Xun Yi, and Cong Wang,
+        "SecDR: Enabling Secure, Efficient, and Accurate Data Recovery for Mobile Crowdsensing",
+        <span style="color: red;">IEEE Transactions on Dependable and Secure Computing (TDSC)</span>, 2023.
+    </li>
+
+
+    <li class="paper">
+        Yifeng Zheng, Shuangqing Xu, <strong>Songlei Wang</strong>, Yansong Gao,
+        and Zhongyun Hua,
+        "Privet: A Privacy-Preserving Vertical Federated Learning Service for Gradient Boosted Decision Tables",
+        <span style="color: red;">IEEE Transactions on Services Computing (TSC)</span>, 2023.
+    </li>
+
+
+    <li class="paper">
+        Menglun Zhou, Yifeng Zheng, <strong>Songlei Wang</strong>, Zhongyun Hua,
+        Hejiao Huang, Yansong Gao, and Xiaohua Jia,
+        "PPTA: A Location Privacy-Preserving and Flexible Task Assignment Service for Spatial Crowdsourcing",
+        <span style="color: red;">Computer Networks</span>, 2023.
+    </li>
+
+
+
+    <!-- ==================== 2022 ==================== -->
+
+    <li class="year-divider"><span>2022</span></li>
+
+
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, and Xun Yi,
+        "PeGraph: A System for Privacy-Preserving and Efficient Search over Encrypted Social Graphs",
+        <span style="color: red;">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2022.
+    </li>
+
+
+    <li class="paper">
+        <strong>Songlei Wang</strong>, Yifeng Zheng, Xiaohua Jia, Hejiao Huang, and Cong Wang,
+        "OblivGM: Oblivious Attributed Subgraph Matching as a Cloud Service",
+        <span style="color: red;">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2022.
+    </li>
+
+
+    <li class="paper">
+        Jiangang Shu<sup class="superscript">#</sup>,
+        <strong>Songlei Wang</strong><sup class="superscript">#</sup>,
+        Xiaohua Jia, Weizhe Zhang, Ruitao Xie, and Hejiao Huang,
+        "Efficient Lane-Level Map Building via Vehicle-based Crowdsourcing",
+        <span style="color: red;">IEEE Transactions on Intelligent Transportation Systems (TITS)</span>, 2022.
+    </li>
+
+
+    <li class="paper">
+        Yifeng Zheng, Weibo Wang, <strong>Songlei Wang</strong>, Xiaohua Jia,
+        Hejiao Huang, and Cong Wang,
+        "SecSkyline: Fast Privacy-Preserving Skyline Queries over Encrypted Cloud Databases",
+        <span style="color: red;">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>, 2022.
+    </li>
+
+
+</ol>
+
+
+
+<!-- ==================== Footer ==================== -->
 
 <div id="footer">
     <div id="footer-text"></div>
 </div>
-<div id="logo" style="margin-top: 10px; text-align:center">
-    <div align="center" style="margin:auto;padding-top:10px">
-        <br>
-        &copy;| <span id="last-updated" style="color:Red">Last updated: Nov 1 2026</span>
-    </div>
-</div>
 
-</body></html>
+<div id="logo" style="text-align: center;">
+    &copy; |
+    <span id="last-updated" style="color: red;">
+        Last updated: Nov 1 2026
+    </span>
+</div>
+</body>
+</html>
